@@ -15,8 +15,10 @@ import com.dalimao.corelibrary.VerificationCodeInput;
 import com.rainbean.taxi.MainActivity;
 import com.rainbean.taxi.R;
 import com.rainbean.taxi.TaxiApplication;
+import com.rainbean.taxi.account.module.AccountManagerImpl;
 import com.rainbean.taxi.account.module.IAccountManager;
 import com.rainbean.taxi.account.presenter.ISmsCodeDialogPresenter;
+import com.rainbean.taxi.common.databus.RxBus;
 import com.rainbean.taxi.common.http.IHttpClient;
 import com.rainbean.taxi.common.http.impl.OkHttpClientImpl;
 import com.rainbean.taxi.common.storage.SharedPreferencesDao;
@@ -67,8 +69,8 @@ public class SmsCodeDialog extends Dialog implements ISmsCodeDialogView {
         SharedPreferencesDao dao =
                 new SharedPreferencesDao(TaxiApplication.getInstance(),
                         SharedPreferencesDao.FILE_ACCOUNT);
-/*        IAccountManager iAccountManager = new AccountManagerImpl(httpClient, dao);
-        mPresenter = new SmsCodeDialogPresenterImpl(this, iAccountManager);*/
+        IAccountManager iAccountManager = new AccountManagerImpl(httpClient, dao);
+//        mPresenter = new SmsCodeDialogPresenterImpl(this, iAccountManager);
         this.mainActivity = context;
     }
 
@@ -94,13 +96,13 @@ public class SmsCodeDialog extends Dialog implements ISmsCodeDialogView {
         requestSendSmsCode();
 
         // 注册 Presenter
-//        RxBus.getInstance().register(mPresenter);
+        RxBus.getInstance().register(mPresenter);
     }
     @Override
     public void dismiss() {
         super.dismiss();
         // 注销 Presenter
-//        RxBus.getInstance().unRegister(mPresenter);
+        RxBus.getInstance().unRegister(mPresenter);
     }
     /**
      * 请求下发验证码
@@ -233,7 +235,7 @@ public class SmsCodeDialog extends Dialog implements ISmsCodeDialogView {
         dismiss();
         if (!exist) {
             // 用户不存在,进入注册
-/*            CreatePasswordDialog dialog =
+            CreatePasswordDialog dialog =
                     new CreatePasswordDialog(getContext(), mPhone);
             dialog.show();
             dialog.setOnDismissListener(new OnDismissListener() {
@@ -241,18 +243,18 @@ public class SmsCodeDialog extends Dialog implements ISmsCodeDialogView {
                 public void onDismiss(DialogInterface dialog) {
                     SmsCodeDialog.this.dismiss();
                 }
-            });*/
+            });
 
         } else {
             // 用户存在 ，进入登录
-/*            LoginDialog dialog = new LoginDialog(mainActivity, mPhone);
+            LoginDialog dialog = new LoginDialog(mainActivity, mPhone);
             dialog.show();
             dialog.setOnDismissListener(new OnDismissListener() {
                 @Override
                 public void onDismiss(DialogInterface dialog) {
                     SmsCodeDialog.this.dismiss();
                 }
-            });*/
+            });
         }
     }
 }

@@ -2,6 +2,7 @@ package com.rainbean.taxi
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.rainbean.taxi.common.util.ToastUtil
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +22,11 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+
+    }
+
+    fun showLoginSuc() {
+        ToastUtil.show(this, getString(R.string.login_suc));
 
     }
 
