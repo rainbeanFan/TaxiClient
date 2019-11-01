@@ -862,9 +862,6 @@ public class MainActivity extends AppCompatActivity
     private void showPhoneInputDialog() {
         PhoneInputDialog dialog = new PhoneInputDialog(this);
         dialog.show();
-
-
-
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {

@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.dalimao.corelibrary.VerificationCodeInput;
 import com.rainbean.mytaxi.R;
+import com.rainbean.taxi.account.presenter.SmsCodeDialogPresenterImpl;
 import com.rainbean.taxi.main.view.MainActivity;
 import com.rainbean.taxi.TaxiApplication;
 import com.rainbean.taxi.account.module.AccountManagerImpl;
@@ -70,7 +71,7 @@ public class SmsCodeDialog extends Dialog implements ISmsCodeDialogView {
                 new SharedPreferencesDao(TaxiApplication.getInstance(),
                         SharedPreferencesDao.FILE_ACCOUNT);
         IAccountManager iAccountManager = new AccountManagerImpl(httpClient, dao);
-//        mPresenter = new SmsCodeDialogPresenterImpl(this, iAccountManager);
+        mPresenter = new SmsCodeDialogPresenterImpl(this, iAccountManager);
         this.mainActivity = context;
     }
 
@@ -108,7 +109,6 @@ public class SmsCodeDialog extends Dialog implements ISmsCodeDialogView {
      * 请求下发验证码
      */
     private void requestSendSmsCode() {
-
         mPresenter.requestSendSmsCode(mPhone);
     }
 

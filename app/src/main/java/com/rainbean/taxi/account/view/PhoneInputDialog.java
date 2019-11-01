@@ -6,8 +6,11 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Display;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -108,4 +111,18 @@ public class PhoneInputDialog extends Dialog {
 
     }
 
+
+    @Override
+    public void show() {
+        super.show();
+
+        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
+
+        Display display = mainActivity.getWindowManager().getDefaultDisplay();
+
+        layoutParams.width= (int) (display.getWidth()*0.8);
+        layoutParams.height= LinearLayout.LayoutParams.WRAP_CONTENT;
+        getWindow().setAttributes(layoutParams);
+
+    }
 }

@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/activity_horizontal_margin"
     android:orientation="vertical">
 
     <!--头部-->
@@ -32,6 +31,7 @@
         <TextView
             android:id="@+id/phone_title"
             android:layout_width="50dp"
+            android:gravity="center"
             android:layout_height="wrap_content"
             android:textColor="@color/color_text_normal"
             android:text="+86" />
@@ -39,7 +39,9 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
             android:hint="@string/pls_input_phone"
+            android:maxLength="11"
             style="@style/Dialog.Input"
             android:id="@+id/phone"
             android:inputType="phone"
