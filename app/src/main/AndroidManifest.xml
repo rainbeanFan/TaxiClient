@@ -34,7 +34,7 @@
             android:value="30dea4ee7ba36cdcf78efd25effcb32f" />
         <activity
             android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:name="com.rainbean.taxi.main.view.MainActivity"
+            android:name="com.rainbean.taxi.SplashActivity"
             android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +44,7 @@
         </activity>
         <activity
             android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:name="com.rainbean.taxi.SplashActivity"></activity>
+            android:name="com.rainbean.taxi.main.view.MainActivity"></activity>
 
         <service
             android:label="PushService"

@@ -26,13 +26,9 @@ class SplashActivity : AppCompatActivity() {
          /**
          * 延时 3 秒然后跳转到 main 页面
          */
-        Handler().postDelayed(Runnable() {
-            @Override
-            fun run() {
-                startActivity(Intent(this, MainActivity::class.java));
-                finish();
-            }
-        }, 3000) ;
+        Handler().postDelayed({
+            startActivity(Intent(this, MainActivity::class.java));
+            finish() }, 3000)
 
     }
 
