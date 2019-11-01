@@ -12,8 +12,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.dalimao.corelibrary.VerificationCodeInput;
-import com.rainbean.taxi.MainActivity;
-import com.rainbean.taxi.R;
+import com.rainbean.mytaxi.R;
+import com.rainbean.taxi.main.view.MainActivity;
 import com.rainbean.taxi.TaxiApplication;
 import com.rainbean.taxi.account.module.AccountManagerImpl;
 import com.rainbean.taxi.account.module.IAccountManager;

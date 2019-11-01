@@ -41,10 +41,10 @@ public class API {
     public static class Config {
         private static final String TEST_DOMAIN = "http://cloud.bmob.cn";
         private static final String RElEASE_DOMAIN = "http://cloud.bmob.cn";
-        private static final String TEST_APP_ID = "e90928398db0130b0d6d21da7bde357e";
-        private static final String RELEASE_APP_ID = "e90928398db0130b0d6d21da7bde357e";
-        private static final String TEST_APP_KEY = "514d8f8a2371bdf1566033f6664a24d2";
-        private static final String RELEASE_APP_KEY = "514d8f8a2371bdf1566033f6664a24d2";
+        private static final String TEST_APP_ID = "9c11cc1a8da69e76cf8b85820dcbfc2b";
+        private static final String RELEASE_APP_ID = "9c11cc1a8da69e76cf8b85820dcbfc2b";
+        private static final String TEST_APP_KEY = "c8fb6c4f97be04681857d10039d1f693";
+        private static final String RELEASE_APP_KEY = "c8fb6c4f97be04681857d10039d1f693";
         private static String appId = TEST_APP_ID;
         private static String appKey = TEST_APP_KEY;
         private static String domain = TEST_DOMAIN;

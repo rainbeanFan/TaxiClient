@@ -11,8 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.rainbean.taxi.MainActivity;
-import com.rainbean.taxi.R;
+import com.rainbean.mytaxi.R;
+import com.rainbean.taxi.main.view.MainActivity;
 import com.rainbean.taxi.common.util.FormatUtil;
 
 public class PhoneInputDialog extends Dialog {
