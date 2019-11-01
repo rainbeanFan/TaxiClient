@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+
+
 
 import com.rainbean.mytaxi.R;
 import com.rainbean.taxi.main.view.MainActivity;
@@ -27,7 +30,6 @@ public class PhoneInputDialog extends Dialog {
     }
     public PhoneInputDialog(Context context, int theme) {
         super(context, theme);
-
     }
 
     @Override
@@ -36,6 +38,12 @@ public class PhoneInputDialog extends Dialog {
         LayoutInflater inflater = (LayoutInflater) getContext()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mRoot  = inflater.inflate(R.layout.dialog_phone_input, null);
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+
+        mRoot.setLayoutParams(params);
+
         setContentView(mRoot);
         initListener();
     }
@@ -76,6 +84,8 @@ public class PhoneInputDialog extends Dialog {
                         PhoneInputDialog.this.dismiss();
                     }
                 });
+
+
 
             }
         });

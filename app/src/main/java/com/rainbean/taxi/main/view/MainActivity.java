@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -861,6 +862,9 @@ public class MainActivity extends AppCompatActivity
     private void showPhoneInputDialog() {
         PhoneInputDialog dialog = new PhoneInputDialog(this);
         dialog.show();
+
+
+
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {

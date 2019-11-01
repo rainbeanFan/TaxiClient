@@ -1,62 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/activity_horizontal_margin"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
     <!--头部-->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/btn_close"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="end"
         android:padding="@dimen/activity_vertical_margin"
         android:id="@+id/close" />
 
-
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/close"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="center"
         android:text="@string/login"
         android:id="@+id/dialog_title"
         style="@style/Dialog.Title" />
 
-    <TextView
-        android:id="@+id/phone_title"
-        android:layout_width="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="30dp"
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/dialog_title"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:textColor="@color/color_text_normal"
-        android:text="+86" />
+        android:orientation="horizontal">
 
+        <TextView
+            android:id="@+id/phone_title"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_text_normal"
+            android:text="+86" />
 
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/dialog_title"
-        app:layout_constraintLeft_toRightOf="@id/phone_title"
-        app:layout_constraintBaseline_toBaselineOf="@id/phone_title"
-        android:hint="@string/pls_input_phone"
-        style="@style/Dialog.Input"
-        android:id="@+id/phone"
-        android:inputType="phone"
-        android:textColor="@color/color_text_normal" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pls_input_phone"
+            style="@style/Dialog.Input"
+            android:id="@+id/phone"
+            android:inputType="phone"
+            android:textColor="@color/color_text_normal" />
+
+    </LinearLayout>
+
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/phone"
         android:text="@string/next"
         style="@style/Dialog.Button"
         android:id="@+id/btn_next" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
